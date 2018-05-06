@@ -44,7 +44,7 @@ void close(){
 
 bool loadMedia(){
   //Load splash image
-  gHelloWorld = SDL_LoadBMP("./Images/nicface.png");
+  gHelloWorld = SDL_LoadBMP("./Images/nicface.bmp");
   if (gHelloWorld == NULL){
     printf("Unable to load image %s! SDL Error: %s\n","./Images/nicface.png", SDL_GetError());
     return false;
@@ -68,7 +68,7 @@ int main(int argc, char* args[]){
   //Update the surface
   SDL_UpdateWindowSurface(gWindow);
   //Wait ten seconds
-  SDL_Delay(10000);
+  SDL_Delay(2000);
   //Free resources and close SDL
   close();
 
