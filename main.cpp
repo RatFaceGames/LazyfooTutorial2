@@ -1,6 +1,9 @@
 #include <SDL.h>
 #include <stdio.h>
 
+int SCREEN_WIDTH = 640;
+int SCREEN_HEIGHT = 480;
+
 bool init(){
   //Initialization flag
   bool success = true;
@@ -38,4 +41,27 @@ bool loadMedia(){
     return false;
   }
   return true;
+}
+
+int main(int argc, char* args[]){
+  //Start SDL and create window
+  if (!init()){
+    printf("Failed to initialize!\n")
+    return 1;
+  }
+  //Load media
+  if (!loadMedia()){
+    printf("Failed to load media!\n")
+    return 1;
+  }
+  //Apply the image
+  SDL_BlitSurface(gHelloWorld,NULL,gScreenSurface,NULL);
+  //Update the surface
+  SDL_UpdateWindowSurface(gWindow);
+  //Wait ten seconds
+  SDL_Delay(10000);
+  //Free resources and close SDL
+  close();
+
+  return 0;
 }
