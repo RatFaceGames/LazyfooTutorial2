@@ -46,6 +46,7 @@ bool loadMedia(){
 }
 int main(int argc, char* args[]){
   //Start SDL and create window
+  printf("test");
   if (!init()){
     printf("Failed to initialize!\n");
     return 1;
