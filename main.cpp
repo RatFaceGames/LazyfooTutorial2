@@ -55,12 +55,12 @@ bool loadMedia(){
 int main(int argc, char* args[]){
   //Start SDL and create window
   if (!init()){
-    printf("Failed to initialize!\n")
+    printf("Failed to initialize!\n");
     return 1;
   }
   //Load media
   if (!loadMedia()){
-    printf("Failed to load media!\n")
+    printf("Failed to load media!\n");
     return 1;
   }
   //Apply the image
