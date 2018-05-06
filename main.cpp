@@ -1,18 +1,13 @@
 #include <SDL.h>
 #include <stdio.h>
-
 int SCREEN_WIDTH = 640;
 int SCREEN_HEIGHT = 480;
-
 //The window we'll be rendering to
 SDL_Window* gWindow = NULL;
-
 //The surface contained by the window
 SDL_Surface* gScreenSurface = NULL;
-
 //The image we will load and show on the screen
 SDL_Surface* gHelloWorld = NULL;
-
 bool init(){
   //Initialization flag
   bool success = true;
@@ -30,7 +25,6 @@ bool init(){
   //Get widnow SDL_Surface
   gScreenSurface = SDL_GetWindowSurface(gWindow);
 }
-
 void close(){
   //Deallocate surface
   SDL_FreeSurface(gHelloWorld);
@@ -41,7 +35,6 @@ void close(){
   //Quit SDL subsystems
   SDL_Quit();
 }
-
 bool loadMedia(){
   //Load splash image
   gHelloWorld = SDL_LoadBMP("./Images/nicface.bmp");
@@ -51,7 +44,6 @@ bool loadMedia(){
   }
   return true;
 }
-
 int main(int argc, char* args[]){
   //Start SDL and create window
   if (!init()){
@@ -71,6 +63,5 @@ int main(int argc, char* args[]){
   SDL_Delay(2000);
   //Free resources and close SDL
   close();
-
   return 0;
 }
