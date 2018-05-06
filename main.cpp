@@ -18,3 +18,14 @@ bool init(){
   //Get widnow SDL_Surface
   gScreenSurface = SDL_GetWindowSurface(gWindow);
 }
+
+void close(){
+  //Deallocate surface
+  SDL_FreeSurface(gHelloWorld);
+  gHelloWorld=NULL;
+  //Destroy window
+  SDL_DestroyWindow(gWindow);
+  gWindow = NULL;
+  //Quit SDL subsystems
+  SDL_Quit();
+}
