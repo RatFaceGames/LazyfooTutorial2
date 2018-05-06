@@ -29,3 +29,13 @@ void close(){
   //Quit SDL subsystems
   SDL_Quit();
 }
+
+bool loadMedia(){
+  //Load splash image
+  gHelloWorld = SDL_LoadBMP("./Images/nicface.png");
+  if (gHelloWorld == NULL){
+    printf("Unable to load image %s! SDL Error: %s\n","./Images/nicface.png", SDL_GetError());
+    return false;
+  }
+  return true;
+}
