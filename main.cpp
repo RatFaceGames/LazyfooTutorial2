@@ -14,17 +14,17 @@ bool init(){
   //Initialize SDL
   if(SDL_Init(SDL_INIT_VIDEO)<0){
     printf("SDL could not initialize! SDL_Error:%s\n", SDL_GetError());
-    return false;
+    success = false;
   }
   //Create window
   gWindow = SDL_CreateWindow("SDLTutorial",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDTH,SCREEN_HEIGHT,SDL_WINDOW_SHOWN);
   if (gWindow == NULL){
     printf( "Window could not be created! SDL_Error: %s\n", SDL_GetError());
-    return false;
+    success = false;
   }
   //Get widnow SDL_Surface
   gScreenSurface = SDL_GetWindowSurface(gWindow);
-  return true;
+  return success;
 }
 void close(){
   //Deallocate surface
@@ -38,16 +38,16 @@ void close(){
 }
 bool loadMedia(){
   //Load splash image
-  gHelloWorld = SDL_LoadBMP("LazyfooTutorial2/Images/nicface.bmp");
+  gHelloWorld = SDL_LoadBMP("./Images/nicface.bmp");
   if (gHelloWorld == NULL){
-    printf("Unable to load image %s! SDL Error: %s\n","LazyfooTutorial2/Images/nicface.bmp", SDL_GetError());
+    printf("Unable to load image %s! SDL Error: %s\n","./Images/nicface.bmp", SDL_GetError());
     return false;
   }
   return true;
 }
 int main(int argc, char* args[]){
   //Start SDL and create window
-  printf("test");
+  printf("test\n");
   if (!init()){
     printf("Failed to initialize!\n");
     return 1;
