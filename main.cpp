@@ -37,9 +37,9 @@ void close(){
 }
 bool loadMedia(){
   //Load splash image
-  gHelloWorld = SDL_LoadBMP("LazyFooTutorial2/Images/nicface.bmp");
+  gHelloWorld = SDL_LoadBMP("LazyfooTutorial2/Images/nicface.bmp");
   if (gHelloWorld == NULL){
-    printf("Unable to load image %s! SDL Error: %s\n","LazyFooTutorial2/Images/nicface.bmp", SDL_GetError());
+    printf("Unable to load image %s! SDL Error: %s\n","LazyfooTutorial2/Images/nicface.bmp", SDL_GetError());
     return false;
   }
   return true;
@@ -60,7 +60,7 @@ int main(int argc, char* args[]){
   //Update the surface
   SDL_UpdateWindowSurface(gWindow);
   //Wait ten seconds
-  SDL_Delay(2000);
+  SDL_Delay(10000);
   //Free resources and close SDL
   close();
   return 0;
