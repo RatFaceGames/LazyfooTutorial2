@@ -24,6 +24,7 @@ bool init(){
   }
   //Get widnow SDL_Surface
   gScreenSurface = SDL_GetWindowSurface(gWindow);
+  return true;
 }
 void close(){
   //Deallocate surface
